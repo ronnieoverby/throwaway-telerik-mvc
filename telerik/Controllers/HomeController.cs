@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Telerik.Web.Mvc;
+using telerik.Infrastructure;
 using telerik.Models;
 
 namespace telerik.Controllers
@@ -12,38 +13,23 @@ namespace telerik.Controllers
     {
         //
         // GET: /Home/
-
+        PeopleRepository _repo = new PeopleRepository();
 
         public ActionResult Index()
         {
             return View();
         }
 
-        private static List<Person> _people;
-        private IEnumerable<Person> GetPeopleQuery()
-        {
-            return _people ?? (_people =
-                               Enumerable.Range(1, 100)
-                                   .Select(x => new Person
-                                                    {
-                                                        Id = x,
-                                                        FirstName = "First " + x,
-                                                        LastName = "last " + x,
-                                                        Phone = "123-456-7890",
-                                                        Email = "adsf@adsf.com"
-                                                    }).ToList());
-        }
-
         [GridAction]
         public ActionResult GetPeople()
         {
-            return View(new GridModel(GetPeopleQuery()));
+            return View(new GridModel(_repo.GetAllPeople()));
         }
 
         [GridAction]
         public ActionResult EditPerson(int id)
         {
-            var person = _people.Single(x => x.Id == id);
+            var person = _repo.Find(id);
             UpdateModel(person);
             return GetPeople();
         }
@@ -51,16 +37,14 @@ namespace telerik.Controllers
         [GridAction]
         public ActionResult AddPerson(Person person)
         {
-            person.Id = _people.Max(x => x.Id) + 1;
-            _people.Add(person);
+            _repo.Add(person);
             return GetPeople();
         }
 
         [GridAction]
         public ActionResult DeletePerson(int id)
         {
-            var person = _people.Single(x => x.Id == id);
-            _people.Remove(person);
+            _repo.RemoveById(id);
             return GetPeople();
         }
     }
