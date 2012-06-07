@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telerik", "telerik\telerik.csproj", "{F30777AE-8AF3-4BAE-AD0C-723E3C8B0AEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F30777AE-8AF3-4BAE-AD0C-723E3C8B0AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F30777AE-8AF3-4BAE-AD0C-723E3C8B0AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F30777AE-8AF3-4BAE-AD0C-723E3C8B0AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F30777AE-8AF3-4BAE-AD0C-723E3C8B0AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

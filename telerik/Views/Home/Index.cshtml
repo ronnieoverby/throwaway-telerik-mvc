@@ -1,0 +1,87 @@
+﻿@using telerik.Models
+@{
+    ViewBag.Title = "title";
+
+}
+@section Head
+{
+@*<style type="text/css">
+    .field-validation-error
+    {
+        position: absolute;
+        display: block;
+    }
+    
+    * html .field-validation-error { position: relative; }
+    *+html .field-validation-error { position: relative; }
+    
+    .field-validation-error span
+    {
+        position: absolute;
+        white-space: nowrap;
+        color: red;
+        padding: 17px 5px 3px;
+        background: transparent url('<%= Url.Content("~/Content/Common/validation-error-message.png") %>') no-repeat 0 0;
+    }
+    
+    /* in-form editing */
+    .t-edit-form-container
+    {
+        width: 350px;
+        margin: 1em;
+    }
+    
+    .t-edit-form-container .editor-label,
+    .t-edit-form-container .editor-field
+    {
+        padding-bottom: 1em;
+        float: left;
+    }
+    
+    .t-edit-form-container .editor-label
+    {
+        width: 30%;
+        text-align: right;
+        padding-right: 3%;
+        clear: left;
+    }
+    
+    .t-edit-form-container .editor-field
+    {
+        width: 60%;
+    }
+</style>*@
+    
+}
+<h2>
+    title</h2>
+    
+    
+
+@(Html.Telerik().Grid<Person>().Name("peopleGrid")
+    .DataKeys(x => x.Add(z => z.Id))
+    .DataBinding(x => x.Ajax()
+                            .Select("GetPeople", "Home")
+                            .Update("EditPerson", "Home")
+                            .Delete("DeletePerson", "Home")
+                            .Insert("AddPerson", "Home"))
+    .Pageable()
+    .Groupable()
+    .Sortable(x=>x.SortMode(GridSortMode.MultipleColumn	))
+    .Resizable(x => x.Columns(true))
+    .ColumnContextMenu()
+    .Filterable()
+    .ToolBar(x => x.Insert().ButtonType(GridButtonType.BareImage))
+    .Editable(x => x.Mode(GridEditMode.PopUp))
+    .Columns(x =>
+                {
+                    x.Command(z =>
+                                    {
+                                        z.Edit().ButtonType(GridButtonType.BareImage);
+                                        z.Delete().ButtonType(GridButtonType.BareImage);
+                                    }).IncludeInContextMenu(false);
+                    
+                    x.AutoGenerate(true);
+                })
+)
+
