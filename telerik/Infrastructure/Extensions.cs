@@ -48,5 +48,7 @@ namespace telerik.Infrastructure
             long range = maxValue - minValue;
             return rg.NextLong(range) + minValue;
         }
+
+        
     }
 }
