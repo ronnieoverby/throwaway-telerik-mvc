@@ -1,0 +1,94 @@
+﻿@using telerik.Infrastructure
+@model telerik.Models.Person
+           
+@*<script type="text/javascript">
+    $(function () {
+        $('span.field-validation-valid, span.field-validation-error').each(function () {
+            $(this).addClass('help-block');
+        });
+
+        $.validator.setDefaults({
+            invalidHandler: function (form, validator) {
+                console.log({
+                    form: form, validator: validator
+                });
+            }
+        });
+
+        //        $('form').submit(function () {
+        //            if ($(this).valid()) {
+        //                $(this).find('div.control-group').each(function () {
+        //                    if ($(this).find('span.field-validation-error').length == 0) {
+        //                        $(this).removeClass('error');
+        //                    }
+        //                });
+        //            }
+        //            else {
+        //                $(this).find('div.control-group').each(function () {
+        //                    if ($(this).find('span.field-validation-error').length > 0) {
+        //                        $(this).addClass('error');
+        //                    }
+        //                });
+        //            }
+        //        });
+
+        //        $('form').each(function () {
+        //            $(this).find('div.control-group').each(function () {
+        //                if ($(this).find('span.field-validation-error').length > 0) {
+        //                    $(this).addClass('error');
+        //                }
+        //            });
+        //        });
+        
+    });
+</script>
+<div class="form-horizontal">
+    <div class="control-group">
+        @Html.LabelFor(x => x.FirstName, new { @class = "control-label" })
+        <div class="controls">
+            @Html.EditorFor(x => x.FirstName)
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(x => x.LastName, new { @class = "control-label" })
+        <div class="controls">
+            @Html.EditorFor(x => x.LastName)
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(x => x.Phone, new { @class = "control-label" })
+        <div class="controls">
+            @Html.EditorFor(x => x.Phone)
+            @Html.ValidationMessageFor(x => x.Phone)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(x => x.Email, new { @class = "control-label" })
+        <div class="controls">
+            @Html.EditorFor(x => x.Email)
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(x => x.BirthDate, new { @class = "control-label" })
+        <div class="controls">
+            @Html.EditorFor(x => x.BirthDate)
+            @Html.ValidationMessageFor(x => x.BirthDate)
+        </div>
+    </div>
+</div>
+​*@
+
+
+
+<div>
+    @Html.LabelFor(x=>x.FirstName)
+    @Html.EditorFor(x=>x.FirstName)
+    @Html.ValidationMessageFor(x=>x.FirstName)
+</div>
+<div>
+@Html.LabelFor(x => x.LastName)
+@Html.EditorFor(x => x.LastName)
+@Html.ValidationMessageFor(x => x.LastName)</div>

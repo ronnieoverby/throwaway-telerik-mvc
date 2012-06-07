@@ -54,9 +54,8 @@
     
 }
 <h2>
-    title</h2>
-    
-    
+    title
+</h2>
 
 @(Html.Telerik().Grid<Person>().Name("peopleGrid")
     .DataKeys(x => x.Add(z => z.Id))
@@ -76,7 +75,8 @@
     .Columns(x =>
                 {
                     x.Command(z =>
-                                    {
+                                  {
+                                      z.Custom("Edit").ButtonType(GridButtonType.BareImage);
                                         z.Edit().ButtonType(GridButtonType.BareImage);
                                         z.Delete().ButtonType(GridButtonType.BareImage);
                                     }).IncludeInContextMenu(false);
@@ -84,4 +84,3 @@
                     x.AutoGenerate(true);
                 })
 )
-

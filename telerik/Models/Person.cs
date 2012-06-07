@@ -23,8 +23,8 @@ namespace telerik.Models
         [Email]
         public string Email { get; set; }
 
-        [Display(Name = "Birth Date")]
-        public DateTime BirthDate { get; set; }
+        [Display(Name = "Birth Date"),UIHint("Date")]
+        public DateTime? BirthDate { get; set; }
 
         private static readonly Lazy<NameGenerator> Ngen = new Lazy<NameGenerator>(() => new NameGenerator { Commonality = .1 });
         private static readonly Lazy<Random> _random = new Lazy<Random>(() => new Random());
