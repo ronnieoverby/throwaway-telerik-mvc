@@ -14,7 +14,7 @@ namespace telerik.Infrastructure
         {
             if (_people == null)
             {
-                _people = CreatePeople(100).ToList();
+                _people = CreatePeople(1000).ToList();
             }
         }
 
@@ -25,9 +25,7 @@ namespace telerik.Infrastructure
 
         private IEnumerable<Person> CreatePeople(int n)
         {
-            var r = new Random();
-            for (int i = 0; i < n; i++)
-                yield return Person.Random(i);
+            return Enumerable.Range(1, n).Select(Person.Random);
         }
 
         public Person Find(int id)

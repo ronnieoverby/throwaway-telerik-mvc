@@ -30,7 +30,7 @@ namespace telerik.Models
         [Display(Name = "Birth Date")]
         public DateTime BirthDate { get; set; }
 
-        private static Lazy<NameGenerator> _ngen = new Lazy<NameGenerator>(() => new NameGenerator {Commonality = .01});
+        private static Lazy<NameGenerator> _ngen = new Lazy<NameGenerator>(() => new NameGenerator { Commonality = .1 });
         private static Lazy<Random> _random = new Lazy<Random>(() => new Random());
         public static Person Random(int id)
         {
@@ -46,7 +46,7 @@ namespace telerik.Models
             person.Email = string.Format("{0}{1}@{2}",
                                          person.FirstName[0],
                                          person.LastName,
-                                         _random.Value.PickNext("gmail.com", "yahoo.com", "msn.com", "core-techs.net"))
+                                         _random.Value.PickNext("gmail.com", "yahoo.com", "msn.com", "core-techs.net", "aol.com", "hotmail.com"))
                 .ToLower();
 
             return person;

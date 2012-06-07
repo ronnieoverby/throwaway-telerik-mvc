@@ -19,7 +19,8 @@ namespace telerik.Infrastructure
 
         public static string NextPhone(this Random r)
         {
-            return string.Format("({0}){0}-{1}",
+            return string.Format("({0}) {1}-{2}",
+                                 r.Next(200, 1000),
                                  r.Next(100, 1000),
                                  r.Next(1000, 10000));
         }
