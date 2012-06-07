@@ -67,7 +67,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="Telerik.Web.Mvc">
-      <HintPath>..\..\..\..\Users\Ronnie\AppData\Roaming\Telerik\Updates\Telerik_Extensions_for_ASPNET_MVC_2012_1_419_Commercial_hotfix\Binaries\Mvc3\Telerik.Web.Mvc.dll</HintPath>
+      <HintPath>..\lib\Telerik.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="WebActivator">
       <HintPath>..\packages\WebActivator.1.2.0.0\lib\NETFramework40\WebActivator.dll</HintPath>
